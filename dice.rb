@@ -9,17 +9,17 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
-  "<h1>Dice Roll</h1>
-  <div>
-    <h2>
-      <ul> 
-        <li><a href='https://fluffy-potato-x59vv5j65vqp3vvx-4567.app.github.dev/dice/2/6'>Roll two 6-sided dice</a></li>
-        <li><a href='https://fluffy-potato-x59vv5j65vqp3vvx-4567.app.github.dev/dice/2/10'>Roll two 10-sided dice</a></li>
-        <li><a href='https://fluffy-potato-x59vv5j65vqp3vvx-4567.app.github.dev/dice/1/20'>Roll one 20-sided dice</a></li>
-        <li><a href='https://fluffy-potato-x59vv5j65vqp3vvx-4567.app.github.dev/dice/5/4'>Roll five 4-sided dice</a></li>
-      </ul>
-    </h2>
-  </div>"
+  "
+  <h1>Dice Roll</h1>
+  <h3>
+    <ul> 
+      <li><a href=\"/dice/2/6\">Roll two 6-sided dice</a></li>
+      <li><a href=\"dice/2/10\">Roll two 10-sided dice</a></li>
+      <li><a href=\"dice/1/20\">Roll one 20-sided dice</a></li>
+      <li><a href=\"dice/5/4\">Roll five 4-sided dice</a></li>
+    </ul>
+  </h3>
+  "
 end
 
 get("/zebra") do
@@ -70,7 +70,7 @@ get("/dice/5/4") do
 
   sum = first_die + second_die + third_die + fourth_die + fifth_die
 
-  outcome = "You rolled a #{first_die}, #{second_die}, #{third_die}, #{fourth_die}, and #{fifth_die} for a sum of #{sum}."
+  outcome = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, a #{fourth_die}, and a #{fifth_die} for a sum of #{sum}."
 
   "<h1>5d4</h1>
   <p>#{outcome}</p>"
